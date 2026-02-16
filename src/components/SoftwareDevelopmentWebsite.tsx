@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { ArrowRight, ChevronRight, Menu, X, Code, Zap, Settings2, Sparkles } from "lucide-react"
+import { ArrowRight, ChevronRight, Menu, X, Calculator, Car, Truck, Wallet } from "lucide-react"
 import { motion, type Variants } from "framer-motion"
 import { GridMotion } from "./ui/grid-motion"
 import { cn } from "@/lib/utils"
@@ -125,9 +125,9 @@ const transitionVariants = {
 }
 
 const menuItems = [
-  { name: "Услуги", href: "#services" },
-  { name: "Решения", href: "#solutions" },
-  { name: "О нас", href: "#about" },
+  { name: "Калькулятор", href: "#calculator" },
+  { name: "Возможности", href: "#features" },
+  { name: "О сервисе", href: "#about" },
   { name: "Контакты", href: "#contact" },
 ]
 
@@ -212,7 +212,7 @@ const HeroHeader = () => {
                       : "hidden bg-orange-500 hover:bg-orange-600",
                   )}
                 >
-                  <span>Начать</span>
+                  <span>Рассчитать</span>
                 </Button>
               </div>
             </div>
@@ -227,9 +227,9 @@ const Logo = ({ className }: { className?: string }) => {
   return (
     <div className={cn("flex items-center space-x-2", className)}>
       <div className="bg-orange-500 rounded-lg p-2">
-        <Code className="h-6 w-6 text-white" />
+        <Calculator className="h-6 w-6 text-white" />
       </div>
-      <span className="text-xl font-bold">КодМастер</span>
+      <span className="text-xl font-bold">СменаПро</span>
     </div>
   )
 }
@@ -298,10 +298,10 @@ export default function SoftwareDevelopmentWebsite() {
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <a
-                    href="#services"
+                    href="#calculator"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
-                    <span className="text-foreground text-sm">Индивидуальные решения для малого бизнеса</span>
+                    <span className="text-foreground text-sm">Бесплатный калькулятор для водителей</span>
                     <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
                     <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
@@ -317,14 +317,13 @@ export default function SoftwareDevelopmentWebsite() {
                   </a>
 
                   <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                    Трансформируйте бизнес с{" "}
+                    Узнайте свою чистую прибыль за{" "}
                     <span className="inline-block text-orange-500 text-6xl md:text-7xl xl:text-[5.25rem] font-semibold">
-                      современным ПО
+                      каждую смену
                     </span>
                   </h1>
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                    Создаем масштабируемые и эффективные программные решения под ваши бизнес-задачи.
-                    От веб-приложений до мобильных приложений - помогаем малому бизнесу расти с помощью технологий.
+                    Калькулятор для водителей такси, доставки и грузовых перевозок. Учитывает бензин, амортизацию, комиссию агрегатора и другие расходы — показывает реальный заработок.
                   </p>
                 </AnimatedGroup>
 
@@ -344,11 +343,11 @@ export default function SoftwareDevelopmentWebsite() {
                 >
                   <div key={1} className="bg-orange-500/10 rounded-[14px] border border-orange-200 p-0.5">
                     <Button size="lg" className="rounded-xl px-5 text-base bg-orange-500 hover:bg-orange-600">
-                      <span className="text-nowrap">Бесплатная консультация</span>
+                      <span className="text-nowrap">Рассчитать прибыль</span>
                     </Button>
                   </div>
                   <Button key={2} size="lg" variant="ghost" className="h-10.5 rounded-xl px-5 hover:text-orange-500">
-                    <span className="text-nowrap">Наши работы</span>
+                    <span className="text-nowrap">Как это работает</span>
                   </Button>
                 </AnimatedGroup>
               </div>
@@ -382,83 +381,35 @@ export default function SoftwareDevelopmentWebsite() {
               <section className="bg-background pb-16 pt-16 md:pb-32">
                 <div className="group relative m-auto max-w-5xl px-6">
                   <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-                    <a href="#contact" className="block text-sm duration-150 hover:opacity-75 text-orange-500">
-                      <span>Готовы начать проект?</span>
+                    <a href="#calculator" className="block text-sm duration-150 hover:opacity-75 text-orange-500">
+                      <span>Поддерживаем все популярные платформы</span>
                       <ChevronRight className="ml-1 inline-block size-3" />
                     </a>
                   </div>
                   <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
                     <div className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                        alt="Логотип клиента"
-                        height="20"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">Яндекс Такси</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-4 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/column.svg"
-                        alt="Логотип клиента"
-                        height="16"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">Uber</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-4 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/github.svg"
-                        alt="Логотип клиента"
-                        height="16"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">Bolt</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/nike.svg"
-                        alt="Логотип клиента"
-                        height="20"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">Delivery Club</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-5 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                        alt="Логотип клиента"
-                        height="20"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">СберМаркет</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-4 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/laravel.svg"
-                        alt="Логотип клиента"
-                        height="16"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">Яндекс Доставка</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-7 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/lilly.svg"
-                        alt="Логотип клиента"
-                        height="28"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">Грузовичкоф</span>
                     </div>
                     <div className="flex">
-                      <img
-                        className="mx-auto h-6 w-fit dark:invert opacity-60"
-                        src="https://html.tailus.io/blocks/customers/openai.svg"
-                        alt="Логотип клиента"
-                        height="24"
-                        width="auto"
-                      />
+                      <span className="mx-auto text-sm font-medium opacity-60">ПЭК</span>
                     </div>
                   </div>
                 </div>
@@ -471,25 +422,25 @@ export default function SoftwareDevelopmentWebsite() {
           <div className="mx-auto max-w-5xl px-6">
             <div className="text-center">
               <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-                Почему выбирают <span className="text-orange-500">КодМастер</span>
+                Почему выбирают <span className="text-orange-500">СменаПро</span>
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Мы создаем качественные программные решения, которые помогают вашему бизнесу расти и преуспевать в цифровом мире.
+                Точный расчёт чистой прибыли с учётом всех расходов — чтобы вы знали, сколько реально зарабатываете.
               </p>
             </div>
             <Card className="mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 border-orange-200 *:text-center md:mt-16 md:max-w-full md:grid-cols-3 md:divide-x md:divide-y-0">
               <div className="group shadow-zinc-950/5">
                 <CardHeader className="pb-3">
                   <CardDecorator>
-                    <Zap className="size-6 text-orange-500" aria-hidden />
+                    <Car className="size-6 text-orange-500" aria-hidden />
                   </CardDecorator>
 
-                  <h3 className="mt-6 font-medium">Быстрая разработка</h3>
+                  <h3 className="mt-6 font-medium">Такси</h3>
                 </CardHeader>
 
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Быстрое прототипирование и гибкий процесс разработки для скорейшего вывода вашего продукта на рынок.
+                    Расчёт прибыли для водителей такси: комиссия агрегатора, бензин, аренда авто, мойка и прочие расходы.
                   </p>
                 </CardContent>
               </div>
@@ -497,15 +448,15 @@ export default function SoftwareDevelopmentWebsite() {
               <div className="group shadow-zinc-950/5">
                 <CardHeader className="pb-3">
                   <CardDecorator>
-                    <Settings2 className="size-6 text-orange-500" aria-hidden />
+                    <Truck className="size-6 text-orange-500" aria-hidden />
                   </CardDecorator>
 
-                  <h3 className="mt-6 font-medium">Масштабируемые решения</h3>
+                  <h3 className="mt-6 font-medium">Доставка</h3>
                 </CardHeader>
 
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Созданы для роста вместе с вашим бизнесом - наши решения масштабируются по мере развития ваших потребностей.
+                    Калькулятор для курьеров: учёт расходов на топливо, износ транспорта, страховку и обслуживание.
                   </p>
                 </CardContent>
               </div>
@@ -513,15 +464,15 @@ export default function SoftwareDevelopmentWebsite() {
               <div className="group shadow-zinc-950/5">
                 <CardHeader className="pb-3">
                   <CardDecorator>
-                    <Sparkles className="size-6 text-orange-500" aria-hidden />
+                    <Wallet className="size-6 text-orange-500" aria-hidden />
                   </CardDecorator>
 
-                  <h3 className="mt-6 font-medium">Современные технологии</h3>
+                  <h3 className="mt-6 font-medium">Грузовые</h3>
                 </CardHeader>
 
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Используем новейшие технологии и лучшие практики, чтобы ваше ПО было готово к будущему.
+                    Чистая прибыль грузоперевозчиков: топливо, амортизация, платные дороги, стоянки и ТО.
                   </p>
                 </CardContent>
               </div>
@@ -537,7 +488,7 @@ export default function SoftwareDevelopmentWebsite() {
             <div className="space-y-4 sm:col-span-2 lg:col-span-1">
               <Logo />
               <p className="text-sm text-muted-foreground max-w-xs">
-                Трансформируйте свой бизнес с помощью индивидуальных программных решений. Создаем масштабируемые приложения, которые растут вместе с вашим успехом.
+                Бесплатный онлайн-калькулятор чистой прибыли для водителей такси, доставки и грузовых перевозок. Узнайте свой реальный заработок за смену.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
@@ -558,65 +509,65 @@ export default function SoftwareDevelopmentWebsite() {
               </div>
             </div>
 
-            {/* Services */}
+            {/* Calculators */}
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold text-foreground">Услуги</h3>
+              <h3 className="text-sm font-semibold text-foreground">Калькуляторы</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Веб-разработка
+                    Такси
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Мобильные приложения
+                    Доставка
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Заказное ПО
+                    Грузовые
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Разработка API
+                    Сравнение смен
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Облачные решения
+                    История расчётов
                   </a>
                 </li>
               </ul>
             </div>
 
-            {/* Company */}
+            {/* Useful */}
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold text-foreground">Компания</h3>
+              <h3 className="text-sm font-semibold text-foreground">Полезное</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    О нас
+                    Как считать прибыль
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Наша команда
+                    Советы водителям
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Карьера
+                    Частые вопросы
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Кейсы
+                    О сервисе
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
-                    Блог
+                    Обратная связь
                   </a>
                 </li>
               </ul>
@@ -635,7 +586,7 @@ export default function SoftwareDevelopmentWebsite() {
                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="break-all">info@kodmaster.ru</span>
+                  <span className="break-all">info@smenapro.ru</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -648,27 +599,7 @@ export default function SoftwareDevelopmentWebsite() {
                   </svg>
                   <span>+7 (495) 123-45-67</span>
                 </li>
-                <li className="flex items-start space-x-2">
-                  <svg className="h-4 w-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span>
-                    ул. Технопарковая, 15
-                    <br />
-                    Москва, 123456
-                  </span>
-                </li>
+
               </ul>
             </div>
           </div>
@@ -676,7 +607,7 @@ export default function SoftwareDevelopmentWebsite() {
           {/* Bottom section */}
           <div className="mt-12 pt-8 border-t border-orange-200">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-              <div className="text-sm text-muted-foreground">2024 КодМастер. Все права защищены.</div>
+              <div className="text-sm text-muted-foreground">&copy; 2026 СменаПро. Все права защищены.</div>
               <div className="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm">
                 <a href="#" className="text-muted-foreground hover:text-orange-500 transition-colors">
                   Политика конфиденциальности
